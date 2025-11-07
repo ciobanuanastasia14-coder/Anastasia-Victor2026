@@ -3,28 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Site Elegant Animat</title>
+<title>Victor & Anastasia 08.08.2026</title>
 <style>
-/* RESET DE BAZĂ */
+/* RESET */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:"Cormorant Garamond", serif; background-color:#fffaf9; color:#444; line-height:1.6; }
+body { font-family:"Cormorant Garamond", serif; background:#fffaf9; color:#444; line-height:1.6; }
 
 /* HERO */
 .hero {
-  background-image:url('hero.jpg');
-  background-size:cover;
-  background-position:center;
+  background: url('hero.jpg') center/cover no-repeat;
   height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
   text-align:center;
   padding:0 20px;
 }
 
 .overlay {
-  background-color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.85);
   padding:40px 30px;
   border-radius:12px;
   max-width:800px;
@@ -32,52 +29,70 @@ body { font-family:"Cormorant Garamond", serif; background-color:#fffaf9; color:
   opacity:0;
 }
 
-@keyframes fadeInUp {
-  0% { opacity:0; transform:translateY(50px); }
-  100% { opacity:1; transform:translateY(0); }
-}
+@keyframes fadeInUp { 0% {opacity:0; transform:translateY(50px);} 100% {opacity:1; transform:translateY(0);} }
 
-.overlay h1 { font-size:3rem; color:#b76e79; margin-bottom:0.7rem; }
-.overlay p { font-style:italic; font-size:1.3rem; color:#555; }
+.overlay img { width:100%; max-width:350px; border-radius:12px; }
 
 /* SECTIUNI TEXT + POZA */
-section { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; padding:80px 10%; opacity:0; transform:translateY(50px); transition:all 1s ease; }
+section {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  padding:80px 10%;
+  opacity:0;
+  transform:translateY(50px);
+  transition:all 1s ease;
+}
 section.visible { opacity:1; transform:translateY(0); }
 
 .text, .photo { flex:1 1 300px; }
 .text h2 { font-size:2rem; color:#b76e79; margin-bottom:1.5rem; }
-.text p { font-size:1.1rem; line-height:1.8; }
+.text p { font-size:1.1rem; line-height:1.8; margin-bottom:1rem; }
 
 .photo img { width:100%; max-width:450px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition: transform 0.4s ease; }
-.photo img:hover { transform: scale(1.05); }
+.photo img:hover { transform: scale(1.03); }
 
 /* GALERIE */
-.gallery { text-align:center; background-color:#f9f1f3; padding:80px 10%; opacity:0; transform:translateY(50px); transition:all 1s ease; }
+.gallery { text-align:center; background:#f9f1f3; padding:80px 10%; opacity:0; transform:translateY(50px); transition:all 1s ease; }
 .gallery.visible { opacity:1; transform:translateY(0); }
 
 .gallery h2 { color:#b76e79; font-size:2.2rem; margin-bottom:30px; }
 
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-.grid img { width:100%; border-radius:10px; transition: transform 0.3s ease, box-shadow 0.3s; box-shadow:0 2px 6px rgba(0,0,0,0.15); }
-.grid img:hover { transform:scale(1.08); box-shadow:0 6px 15px rgba(0,0,0,0.2); cursor:pointer; }
+.grid img { width:100%; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+.grid img:hover { transform:scale(1.08); cursor:pointer; }
 
 /* CONFIRMARE */
 .confirm { text-align:center; padding:80px 10%; opacity:0; transform:translateY(50px); transition:all 1s ease; }
 .confirm.visible { opacity:1; transform:translateY(0); }
 
 .confirm h2 { font-size:2rem; color:#b76e79; margin-bottom:20px; }
-.confirm img { width:150px; height:auto; margin-bottom:20px; }
 
-.btn { display:inline-block; background:#b76e79; color:white; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:bold; transition: background 0.3s, box-shadow 0.3s, transform 0.3s; }
-.btn:hover { background:#a15f68; box-shadow:0 6px 15px rgba(0,0,0,0.2); transform:translateY(-2px); }
+.confirm a { display:inline-block; margin:0 10px; vertical-align:middle; }
+.confirm img { width:50px; height:50px; margin-bottom:10px; transition: transform 0.3s ease; }
+.confirm img:hover { transform: scale(1.1); }
+.confirm a[href^="tel"] { font-size:1.2rem; color:#b76e79; margin-left:10px; text-decoration:none; }
 
 /* FOOTER */
-footer { background-color:#f4e3e7; text-align:center; padding:25px; font-style:italic; color:#333; }
+footer { background:#f4e3e7; text-align:center; padding:25px; font-style:italic; color:#333; }
 
 /* RESPONSIVITATE */
-@media (max-width:1024px){ .hero { height:80vh; } .overlay h1 { font-size:2.5rem; } section { padding:60px 8%; } }
-@media (max-width:768px){ .hero { height:70vh; } .overlay h1 { font-size:2rem; } .overlay p { font-size:1.1rem; } section { flex-direction:column; text-align:center; padding:50px 5%; } .text, .photo { text-align:center; } .grid { grid-template-columns:1fr; } }
-@media (max-width:480px){ .overlay h1 { font-size:1.7rem; } .overlay p { font-size:1rem; } .btn { padding:10px 20px; font-size:0.9rem; } }
+@media (max-width:1024px){ .hero { height:80vh; } .overlay img { max-width:300px; } section { padding:60px 8%; } }
+@media (max-width:768px){ 
+  section { flex-direction:column; text-align:center; padding:50px 5%; } 
+  .text, .photo { text-align:center; } 
+  .grid { grid-template-columns:1fr; } 
+  .overlay img { max-width:250px; } 
+}
+@media (max-width:480px){
+  .overlay img { max-width:200px; } 
+  .confirm a[href^="tel"] { font-size:1rem; } 
+  .text h2 { font-size:1.5rem; } 
+  .text p { font-size:1rem; }
+  .gallery h2 { font-size:1.7rem; }
+}
 </style>
 </head>
 <body>
@@ -85,7 +100,7 @@ footer { background-color:#f4e3e7; text-align:center; padding:25px; font-style:i
 <!-- HERO -->
 <div class="hero">
   <div class="overlay">
-    <img src="Anastasia & Victor 08.08.2026.png" alt="img">
+    <img src="Anastasia & Victor 08.08.2026.png" alt="Invitatie">
   </div>
 </div>
 
@@ -94,7 +109,7 @@ footer { background-color:#f4e3e7; text-align:center; padding:25px; font-style:i
   <div class="text">
     <h2>Dragii noștri,</h2>
     <p>Cu multă dragoste și emoție în suflet, vă invităm să fiți parte din povestea noastră în cea mai frumoasă zi din viața noastră — ziua în care vom spune <strong>„DA”</strong> în fața celor pe care îi iubim cel mai mult.</p>
-     <p>Vă așteptăm cu inimile deschise să celebrăm împreună dragostea, bucuria și începutul unei noi aventuri!</p>
+    <p>Vă așteptăm cu inimile deschise să celebrăm împreună dragostea, bucuria și începutul unei noi aventuri!</p>
   </div>
   <div class="photo">
     <img src="p.jpg" alt="Poza reprezentativă">
@@ -105,23 +120,23 @@ footer { background-color:#f4e3e7; text-align:center; padding:25px; font-style:i
 <div class="gallery">
   <h2>Galerie</h2>
   <div class="grid">
-    <img src="q.jpg" alt="img">
-    <img src="w.jpg" alt="img">
-    <img src="e.jpg" alt="img">
-    <img src="t.jpg" alt="img">
+    <img src="q.jpg" alt="Galerie 1">
+    <img src="w.jpg" alt="Galerie 2">
+    <img src="e.jpg" alt="Galerie 3">
+    <img src="t.jpg" alt="Galerie 4">
   </div>
 </div>
 
 <!-- CONFIRMARE -->
 <div class="confirm">
   <h2>Confirmare</h2>
-  <a href="https://www.instagram.com/nastea___nastika?igsh=MWR5dnhjNjRyb2w5YQ%3D%3D&utm_source=qr" target="_blank">
-        <img src="ins.png" alt="instagram">
-       </a>
-       <a href="https://www.facebook.com/share/1JgbALhHS6/?mibextid=LQQJ4d" target="_blank">
-        <img src="facebook-logo-facebook-icon-transparent-free-png.webp" alt="facebook">
-       </a>
-       <a href="tel:+37378306783">+37378306783</a>
+  <a href="https://www.instagram.com/nastea___nastika" target="_blank">
+    <img src="ins.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/share/1JgbALhHS6/?mibextid=LQQJ4d" target="_blank">
+    <img src="facebook-logo-facebook-icon-transparent-free-png.webp" alt="Facebook">
+  </a>
+  <a href="tel:+37378306783">+37378306783</a>
 </div>
 
 <!-- FOOTER -->
