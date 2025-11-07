@@ -17,21 +17,22 @@ body { font-family:"Cormorant Garamond", serif; background:#fffaf9; color:#444; 
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:0 20vh;
+  padding:0 10vh;
 }
 
 .overlay {
   background: rgba(255,255,255,0.85);
-  padding:40vh 30vh;
+  padding:15vh 10vh;
   border-radius:12vh;
-  max-width:800vh;
+  max-width:300vh;
   animation: fadeInUp 1.5s forwards;
   opacity:0;
 }
 
 @keyframes fadeInUp { 0% {opacity:0; transform:translateY(50px);} 100% {opacity:1; transform:translateY(0);} }
 
-.overlay img { width:100%; max-width:350px; border-radius:12px; }
+.overlay img { width:100%; max-width:100%; border-radius:12px; }
+
 
 /* SECTIUNI TEXT + POZA */
 section {
@@ -159,6 +160,7 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
 
 
 
